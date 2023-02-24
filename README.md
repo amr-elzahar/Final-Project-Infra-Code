@@ -34,8 +34,7 @@ then you have to add defaults section at the very beginning of the file and make
 
 What is ansible gonna do? 
 
-ansibe main.yaml file has some to tasks to perform, it creates two directories: one for the master node and the other one for the slave node. Then it copys the deployment files for each node from the local machine to the remote host finally run kubectl commands for each node as well.
-
+ansibe main.yaml file has some to tasks to perform, it creates two directories: one for the master node and the other one for the slave node. Then it copys the deployment files for each node from the local machine to the remote host.
 NOTE: make sure to change paths in the main.yaml file and always use absolute path not relative path. 
 
 Finally you can run this command:

@@ -101,7 +101,7 @@ resource "google_compute_instance" "management-vm" {
   metadata_startup_script = file("script.sh")
 
   provisioner "local-exec" {
-    command = " echo ${self.network_interface.0.access_config.0.nat_ip} >> ~/Documents/Final-Project/terraform/ansible/inventory.txt"
+    command = " echo ${self.network_interface.0.access_config.0.nat_ip} > ~/Documents/Final-Project/terraform/ansible/inventory.txt"
   }
 
   metadata = {
