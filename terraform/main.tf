@@ -87,7 +87,7 @@ resource "google_compute_instance" "management-vm" {
     subnetwork = google_compute_subnetwork.management-subnet.id
 
     access_config {
-      // To make the it puplic
+      // To make it puplic
     }
   }
 
@@ -99,6 +99,10 @@ resource "google_compute_instance" "management-vm" {
   }
 
   metadata_startup_script = file("script.sh")
+
+  provisioner "local-exec" {
+    command = " echo ${self.network_interface.0.access_config.0.nat_ip} >> ~/Documents/Final-Project/terraform/ansible/inventory.txt"
+  }
 
   metadata = {
     Name = "Management VM"
