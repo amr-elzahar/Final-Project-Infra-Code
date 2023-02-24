@@ -1,6 +1,6 @@
 # ITI Final Project
 
-Deploy a fully automated node js application on GKE cluster using CI/CD with jenkins and configuration management with Ansible. 
+Deploy a fully automated node js application on GKE cluster using CI/CD with jenkins and configuration management with Ansible and IaC with terraform.
 
 
 ## Usage
@@ -45,4 +45,3 @@ ansible-playbook main.yaml
 
 
 3) jenkins-deployment directory that contains two subdirectories: one for the slave node and the other for master node. Each directory has the deployment files set up jenkins server and a salve node on the GKE. 
-

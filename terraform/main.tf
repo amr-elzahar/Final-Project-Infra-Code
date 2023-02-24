@@ -136,8 +136,8 @@ resource "google_container_cluster" "private-gke" {
   }
 
   ip_allocation_policy {
-    cluster_ipv4_cidr_block  = "10.101.0.0/16"
-    services_ipv4_cidr_block = "10.102.0.0/16"
+    # cluster_ipv4_cidr_block  = "10.101.0.0/16"
+    # services_ipv4_cidr_block = "10.102.0.0/16"
   }
 
   master_authorized_networks_config {
@@ -168,10 +168,10 @@ resource "google_container_node_pool" "private-gke-node-pool" {
     max_unavailable = 0
   }
 
-  # autoscaling {
-  #   min_node_count = 1
-  #   max_node_count = 3
-  # }
+  autoscaling {
+    min_node_count = 1
+    max_node_count = 3
+  }
 
   node_config {
     preemptible  = true
