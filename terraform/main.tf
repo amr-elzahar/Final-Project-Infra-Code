@@ -174,7 +174,6 @@ resource "google_container_node_pool" "private-gke-node-pool" {
   }
 
   node_config {
-    preemptible  = true
     machine_type = "e2-medium"
     disk_size_gb = 100
     disk_type    = "pd-balanced"
